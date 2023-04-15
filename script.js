@@ -1,7 +1,7 @@
 /*
 $(function (){
 
-  ==== ADD EXTRA HOURS ===
+  ==== ADD EXTRA HOURS === DONE
   All I should have to do is just extend the divs out to working hours in the html, and then remove the past, present, future classes until they are applied through the logic later down here...
 
 === DOCUMENT QUERY SELECTORS ===
