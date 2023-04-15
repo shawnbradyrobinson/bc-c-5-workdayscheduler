@@ -104,8 +104,13 @@ $(function () {
 
  
  hour7Div.attr("class", "row time-block future");
- currentDayDisplay.text("Hello");
  
+ // === CURRENT TIME AND DATE === 
+ setInterval (function(){
+  var today = dayjs(); 
+  currentDayDisplay.text(today.format("MMM D, YYYY  | HH:mm:ss A"));
+ }, 1000);
+
  
  
  
