@@ -52,6 +52,13 @@ function saveText(){
   nineAMSaved = hourNineDiv.val();  
 }
 
+OR...fancier...
+function saveText(hour){
+
+  console.log($("#hour-"+hour+"-text").val());
+  
+  
+  }
 
 ***run the onRefresh at the start of the program***
 function onRefresh(){
@@ -76,6 +83,8 @@ etc...
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that the code isn't run until the browser has finished rendering all the elements in the html.
 $(function () {
  // === DOM OBJECTS ===
+ // --- MAIN CONTAINER --- 
+  var mainContainer = $("#main-container");
  // --- DIVS ---
   var currentDayDisplay = $("#currentDay");
   var hour7Div = $("#hour-7"); 
@@ -89,6 +98,19 @@ $(function () {
   var hour3Div = $("#hour-3"); 
   var hour4Div = $("#hour-4"); 
   var hour5Div = $("#hour-5"); 
+  // --- TEXT AREAS --- 
+  var hour7Text = $("#hour-7-text");
+  var hour8Text = $("#hour-8-text");
+  var hour9Text = $("#hour-9-text");
+  var hour10Text = $("#hour-10-text");
+  var hour11Text = $("#hour-11-text");
+  var hour12Text = $("#hour-12-text");
+  var hour1Text = $("#hour-1-text");
+  var hour2Text = $("#hour-2-text");
+  var hour3Text = $("#hour-3-text");
+  var hour4Text = $("#hour-4-text");
+  var hour5Text = $("#hour-5-text");
+
  // --- BUTTONS --- 
   var hour7Button = $("#hour-7-button");
   var hour8Button = $("#hour-8-button");
@@ -102,24 +124,107 @@ $(function () {
   var hour4Button = $("#hour-4-button");
   var hour5Button = $("#hour-5-button");
 
- 
- hour7Div.attr("class", "row time-block future");
+ // === LOCAL STORAGE VARIABLES ===
+  var hour7Saved = localStorage.getItem("HOUR_7");
+  var hour8Saved = localStorage.getItem("HOUR_8");
+  var hour9Saved = localStorage.getItem("HOUR_9");
+  var hour10Saved = localStorage.getItem("HOUR_10");
+  var hour11Saved = localStorage.getItem("HOUR_11");
+  var hour12Saved = localStorage.getItem("HOUR_12");
+  var hour1Saved = localStorage.getItem("HOUR_1");
+  var hour2Saved = localStorage.getItem("HOUR_2");
+  var hour3Saved = localStorage.getItem("HOUR_3");
+  var hour4Saved = localStorage.getItem("HOUR_4");
+  var hour5Saved = localStorage.getItem("HOUR_5");
+
  
  // === CURRENT TIME AND DATE === 
  setInterval (function(){
   var today = dayjs(); 
-  currentDayDisplay.text(today.format("MMM D, YYYY  | HH:mm:ss A"));
+  currentDayDisplay.text(today.format("MMM D, YYYY  | hh:mm:ss A"));
  }, 1000);
+
+ // === COLOR CODED TIME === 
+hour7Div.attr("class", "row time-block future");
+ 
+// === SAVE BUTTON === 
+
+ hour7Button.on("click", function(){
+  alert("Data saved!");
+  console.log(hour7Text.val());
+  localStorage.setItem("HOUR_7", hour7Text.val());
+
+ })
+
+ hour8Button.on("click", function(){
+  console.log(hour8Text.val());
+  localStorage.setItem("HOUR_8", hour8Text.val());
+ })
+
+ hour9Button.on("click", function(){
+  console.log(hour9Text.val());
+  localStorage.setItem("HOUR_9", hour9Text.val());
+ })
+
+ hour10Button.on("click", function(){
+  console.log(hour10Text.val());
+  localStorage.setItem("HOUR_10", hour10Text.val());
+ })
+ 
+ hour11Button.on("click", function(){
+  console.log(hour11Text.val());
+  localStorage.setItem("HOUR_11", hour11Text.val());
+ })
+
+ hour12Button.on("click", function(){
+  console.log(hour12Text.val());
+  localStorage.setItem("HOUR_12", hour12Text.val());
+ })
+
+ hour1Button.on("click", function(){
+  console.log(hour1Text.val());
+  localStorage.setItem("HOUR_1", hour1Text.val());
+ })
+
+ hour2Button.on("click", function(){
+  console.log(hour2Text.val());
+  localStorage.setItem("HOUR_2", hour2Text.val());
+ })
+ 
+ hour3Button.on("click", function(){
+  console.log(hour3Text.val());
+  localStorage.setItem("HOUR_3", hour3Text.val());
+ })
+
+ hour4Button.on("click", function(){
+  console.log(hour4Text.val());
+  localStorage.setItem("HOUR_4", hour4Text.val());
+ })
+ 
+ hour5Button.on("click", function(){
+  console.log(hour5Text.val());
+  localStorage.setItem("HOUR_5", hour5Text.val());
+ })
+
 
  
  
+ function persistItems(){
+  hour7Text.text(hour7Saved);
+  hour8Text.text(hour8Saved);
+  hour9Text.text(hour9Saved);
+  hour10Text.text(hour10Saved);
+  hour11Text.text(hour11Saved);
+  hour12Text.text(hour12Saved);
+  hour1Text.text(hour1Saved);
+  hour2Text.text(hour2Saved);
+  hour3Text.text(hour3Saved);
+  hour4Text.text(hour4Saved);
+  hour5Text.text(hour5Saved);
+
+ }
  
- 
- 
- 
- 
- 
- 
+ persistItems();
  
  
  
