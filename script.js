@@ -1,85 +1,3 @@
-/*
-$(function (){
-
-  ==== ADD EXTRA HOURS === DONE
-  All I should have to do is just extend the divs out to working hours in the html, and then remove the past, present, future classes until they are applied through the logic later down here...
-
-=== DOCUMENT QUERY SELECTORS ===
-var hourNineDiv = $("#hour-9");
-var hourTenDiv = $("#hour-10");
-//make ids in the html for the different save buttons 
-var hourNineButton = $("#hour-9-button");
-
-
-
-=== DISPLAY CURRENT DATE IN THE HEADER === 
-
-Day.JS current date stuff from the class examples...
-
-=== SAVE BUTTON CLICK EVENT LISTENER === 
-
-What does `this` reference in the click listener function?
-***RESEARCH 'this' jQuery click listener function***
-
-***SLOW BUT SURE WAY***
-hourNineButton.on(click, function(){
-
-saveText(); //Save whatever value is currently in hour-9 div to local storage
-
-})
-
-
-
-How can DOM traversal be used to get the "hour-x" id of the time-block containing the button that was clicked?
-
-How might the id be useful when saving the description in local storage?
-
-=== PAST, PRESENT, AND FUTURE COLOR CODING === 
-***RESEARCH in Day.JS if there's a built in past, present, future method***
-
-If not, we could assign some sort of value to a bunch of variables, one representing each id number, and then check to see if each variable is greater than or less than (current time) -- which will then set the color code. 
-
-
-Get the current hour from Day.js in 24 hour time...
-
-Use the id attribute of each time block to add or remove the classes...
-***LOOK BACK AT CLASSWORK ON ADDING AND REMOVING CLASSES IN JQUERY***
-
-=== USE LOCAL STORAGE TO SET CORRESPONDING TEXT AREAS, EVEN ON REFRESH === 
-function saveText(){
-  var nineAMSaved = getLocalStorage("hour-nine")
-
-  nineAMSaved = hourNineDiv.val();  
-}
-
-OR...fancier...
-function saveText(hour){
-
-  console.log($("#hour-"+hour+"-text").val());
-  
-  
-  }
-
-***run the onRefresh at the start of the program***
-function onRefresh(){
-//might need a sentry check in her about:
-
-if(nineAMSaved === null){
-  return; 
-}
-etc...
-
-
-setLocalStorage(nineAMSaved);
-etc...
-}
-
-
-
-})
-
-*/
-
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that the code isn't run until the browser has finished rendering all the elements in the html.
 $(function () {
  // === DOM OBJECTS ===
@@ -136,9 +54,6 @@ $(function () {
   var hour3Saved = localStorage.getItem("HOUR_3");
   var hour4Saved = localStorage.getItem("HOUR_4");
   var hour5Saved = localStorage.getItem("HOUR_5");
- // === TIME VARIABLES === 
-//  var hour7Time = dayjs.get("date").set("hour", 7);
-//  var hour8Time = dayjs(8);
  
  // === CURRENT TIME AND DATE === 
  setInterval (function(){
@@ -229,7 +144,7 @@ if (dayjs().isBefore(dayjs().hour("15"))){
 if (dayjs().isBefore(dayjs().hour("16"))){
   console.log("4 pm is still coming up");
   hour4Div.attr("class", "row time-block future");
-} else if (dayjs().isSame(dayjs("04:00:00 PM", "hour"))){
+} else if (dayjs().isSame(dayjs().hour("16"))){
   console.log("It's 4 right now");
   hour4Div.attr("class", "row time-block present");
 } else {
@@ -247,7 +162,6 @@ if (dayjs().isBefore(dayjs().hour("17"))){
 }
 
 // === SAVE BUTTON === 
-
  hour7Button.on("click", function(){
   alert("Data saved!");
   console.log(hour7Text.val());
@@ -256,51 +170,61 @@ if (dayjs().isBefore(dayjs().hour("17"))){
  })
 
  hour8Button.on("click", function(){
+  alert("Data saved!");
   console.log(hour8Text.val());
   localStorage.setItem("HOUR_8", hour8Text.val());
  })
 
  hour9Button.on("click", function(){
+  alert("Data saved!");
   console.log(hour9Text.val());
   localStorage.setItem("HOUR_9", hour9Text.val());
  })
 
  hour10Button.on("click", function(){
+  alert("Data saved!");
   console.log(hour10Text.val());
   localStorage.setItem("HOUR_10", hour10Text.val());
  })
  
  hour11Button.on("click", function(){
+  alert("Data saved!");
   console.log(hour11Text.val());
   localStorage.setItem("HOUR_11", hour11Text.val());
  })
 
  hour12Button.on("click", function(){
+  alert("Data saved!");
   console.log(hour12Text.val());
   localStorage.setItem("HOUR_12", hour12Text.val());
  })
 
  hour1Button.on("click", function(){
+  alert("Data saved!");
   console.log(hour1Text.val());
   localStorage.setItem("HOUR_1", hour1Text.val());
  })
 
  hour2Button.on("click", function(){
+  alert("Data saved!");
   console.log(hour2Text.val());
   localStorage.setItem("HOUR_2", hour2Text.val());
  })
  
  hour3Button.on("click", function(){
+  alert("Data saved!");
   console.log(hour3Text.val());
   localStorage.setItem("HOUR_3", hour3Text.val());
  })
 
  hour4Button.on("click", function(){
+  alert("Data saved!");
   console.log(hour4Text.val());
   localStorage.setItem("HOUR_4", hour4Text.val());
  })
  
  hour5Button.on("click", function(){
+  alert("Data saved!");
   console.log(hour5Text.val());
   localStorage.setItem("HOUR_5", hour5Text.val());
  })
