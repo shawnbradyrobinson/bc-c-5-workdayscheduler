@@ -73,15 +73,38 @@ etc...
 
 */
 
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+// Wrap all code that interacts with the DOM in a call to jQuery to ensure that the code isn't run until the browser has finished rendering all the elements in the html.
 $(function () {
+ // === DOM OBJECTS ===
+ // --- DIVS ---
+  var currentDayDisplay = $("#currentDay");
+  var hour7Div = $("#hour-7"); 
+  var hour8Div = $("#hour-8"); 
+  var hour9Div = $("#hour-9"); 
+  var hour10Div = $("#hour-10"); 
+  var hour11Div = $("#hour-11"); 
+  var hour12Div = $("#hour-12"); 
+  var hour1Div = $("#hour-1"); 
+  var hour2Div = $("#hour-2"); 
+  var hour3Div = $("#hour-3"); 
+  var hour4Div = $("#hour-4"); 
+  var hour5Div = $("#hour-5"); 
+ // --- BUTTONS --- 
+  var hour7Button = $("#hour-7-button");
+  var hour8Button = $("#hour-8-button");
+  var hour9Button = $("#hour-9-button");
+  var hour10Button = $("#hour-10-button");
+  var hour11Button = $("#hour-11-button");
+  var hour12Button = $("#hour-12-button");
+  var hour1Button = $("#hour-1-button");
+  var hour2Button = $("#hour-2-button");
+  var hour3Button = $("#hour-3-button");
+  var hour4Button = $("#hour-4-button");
+  var hour5Button = $("#hour-5-button");
+
  
- 
- 
- 
- 
+ hour7Div.attr("class", "row time-block future");
+ currentDayDisplay.text("Hello");
  
  
  
