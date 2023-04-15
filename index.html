@@ -23,14 +23,14 @@
   </head>
 
   <body>
-    <header class="p-5 mb-4 border-5 border-bottom border-dark text-center">
+    <header class="p-5 mb-4 border-5 border-bottom border-dark text-center text-light bg-info">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead"> by Shawn Robinson</p>
       <p id="currentDay" class="lead"></p>
     </header>
     <div id="main-container" class="container-lg px-5">
         <div id="hour-7" class="row time-block past">
-          <div class="col-2 col-md-1 hour text-center py-3">7AM</div>
+          <div class="col-2 col-md-1 hour text-center py-3" data-time="7:00 AM">7AM</div>
           <textarea id="hour-7-text" class="col-8 col-md-10 description" rows="3"> </textarea>
           <button id="hour-7-button" class="btn saveBtn col-2 col-md-1" aria-label="save">
             <i class="fas fa-save" aria-hidden="true"></i>

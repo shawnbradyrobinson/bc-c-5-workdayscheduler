@@ -136,7 +136,9 @@ $(function () {
   var hour3Saved = localStorage.getItem("HOUR_3");
   var hour4Saved = localStorage.getItem("HOUR_4");
   var hour5Saved = localStorage.getItem("HOUR_5");
-
+ // === TIME VARIABLES === 
+//  var hour7Time = dayjs.get("date").set("hour", 7);
+//  var hour8Time = dayjs(8);
  
  // === CURRENT TIME AND DATE === 
  setInterval (function(){
@@ -145,8 +147,105 @@ $(function () {
  }, 1000);
 
  // === COLOR CODED TIME === 
-hour7Div.attr("class", "row time-block future");
- 
+// --- 7 AM ---
+if (dayjs().isBefore(dayjs().hour("7"))){
+  hour7Div.attr("class", "row time-block future");
+} else if (dayjs().isSame(dayjs().hour("7"))){
+  hour7Div.attr("class", "row time-block present");
+} else {
+  hour7Div.attr("class", "row time-block past");
+}
+// --- 8 AM ---
+if (dayjs().isBefore(dayjs().hour("8"))){
+  hour8Div.attr("class", "row time-block future");
+} else if (dayjs().isSame(dayjs().hour("8"))){
+  hour8Div.attr("class", "row time-block present");
+} else {
+  hour8Div.attr("class", "row time-block past");
+}
+// --- 9 AM --- 
+if (dayjs().isBefore(dayjs().hour("9"))){
+  hour9Div.attr("class", "row time-block future");
+} else if (dayjs().isSame(dayjs().hour("9"))){
+  hour9Div.attr("class", "row time-block present");
+} else {
+  hour9Div.attr("class", "row time-block past");
+}
+// --- 10 AM --- 
+if (dayjs().isBefore(dayjs().hour("10"))){
+  hour10Div.attr("class", "row time-block future");
+} else if (dayjs().isSame(dayjs().hour("10"))){
+  hour10Div.attr("class", "row time-block present");
+} else {
+  hour10Div.attr("class", "row time-block past");
+}
+
+// --- 11 AM --- 
+if (dayjs().isBefore(dayjs().hour("11"))){
+  hour11Div.attr("class", "row time-block future");
+} else if (dayjs().isSame(dayjs().hour("11"))){
+  hour11Div.attr("class", "row time-block present");
+} else {
+  hour11Div.attr("class", "row time-block past");
+}
+
+// --- 12 PM --- 
+if (dayjs().isBefore(dayjs().hour("12"))){
+  hour12Div.attr("class", "row time-block future");
+} else if (dayjs().isSame(dayjs().hour("12"))){
+  hour12Div.attr("class", "row time-block present");
+} else {
+  hour12Div.attr("class", "row time-block past");
+}
+
+// --- 1 PM --- 
+if (dayjs().isBefore(dayjs().hour("13"))){
+  hour1Div.attr("class", "row time-block future");
+} else if (dayjs().isSame(dayjs().hour("13"))){
+  hour1Div.attr("class", "row time-block present");
+} else {
+  hour1Div.attr("class", "row time-block past");
+}
+
+// --- 2 PM --- 
+if (dayjs().isBefore(dayjs().hour("14"))){
+  hour2Div.attr("class", "row time-block future");
+} else if (dayjs().isSame(dayjs().hour("14"))){
+  hour2Div.attr("class", "row time-block present");
+} else {
+  hour2Div.attr("class", "row time-block past");
+}
+
+// --- 3 PM --- 
+if (dayjs().isBefore(dayjs().hour("15"))){
+  hour3Div.attr("class", "row time-block future");
+} else if (dayjs().isSame(dayjs().hour("15"))){
+  hour3Div.attr("class", "row time-block present");
+} else {
+  hour3Div.attr("class", "row time-block past");
+}
+
+// --- 4 PM --- 
+if (dayjs().isBefore(dayjs().hour("16"))){
+  console.log("4 pm is still coming up");
+  hour4Div.attr("class", "row time-block future");
+} else if (dayjs().isSame(dayjs("04:00:00 PM", "hour"))){
+  console.log("It's 4 right now");
+  hour4Div.attr("class", "row time-block present");
+} else {
+  console.log("4 pm has already happened");
+  hour4Div.attr("class", "row time-block past");
+}
+
+// --- 5 PM --- 
+if (dayjs().isBefore(dayjs().hour("17"))){
+  hour5Div.attr("class", "row time-block future");
+} else if (dayjs().isSame(dayjs().hour("17"))){
+  hour5Div.attr("class", "row time-block present");
+} else if(dayjs().isAfter(dayjs().hour("17"))) {
+  hour5Div.attr("class", "row time-block past");
+}
+
 // === SAVE BUTTON === 
 
  hour7Button.on("click", function(){
@@ -207,7 +306,6 @@ hour7Div.attr("class", "row time-block future");
  })
 
 
- 
  
  function persistItems(){
   hour7Text.text(hour7Saved);
